@@ -8,7 +8,7 @@ const router = express.Router();
 //SWIFT/BIC Code validation
 const swiftRegex = /^[A-Z]{4}[A-Z]{2}[A-Z0-9]{2}([A-Z0-9]{3})?$/;
 
-router.post("/", verifyToken, async (req, res) => {
+router.post("/", authMiddleware, async (req, res) => {
   try {
     const { amount, currency, provider, recipientAccount, swiftCode } = req.body;
 
