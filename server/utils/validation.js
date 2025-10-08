@@ -2,7 +2,7 @@
 import validator from "validator";
 
 export const validateRegistration = (userData) => {
-  const { fullName, idNumber, accountNumber, password, email } = userData;
+  const { fullName, idNumber, accountNumber, password } = userData;
 
   const errors = [];
 
@@ -19,11 +19,6 @@ export const validateRegistration = (userData) => {
   // Account number (8–12 digits)
   if (!/^\d{8,12}$/.test(accountNumber)) {
     errors.push("Invalid account number format.");
-  }
-
-  // Email validation
-  if (!validator.isEmail(email)) {
-    errors.push("Invalid email address.");
   }
 
   // Password strength

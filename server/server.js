@@ -17,6 +17,9 @@ const options = {
   cert: fs.readFileSync("./ssl/certificate.pem")
 };
 
-https.createServer(options, app).listen(PORT, () => {
-  console.log(`Secure backend running at https://localhost:${PORT}`);
+//https.createServer(options, app).listen(PORT, () => {
+  //console.log(`Secure backend running at https://localhost:${PORT}`);
+//});
+app.listen(PORT, () => {
+  console.log(`✅ Backend running at http://localhost:${PORT}`);
 });
